@@ -1,8 +1,8 @@
-const { log } = require('node:console');
 const { readdirSync } = require('node:fs');
 const { EOL } = require('node:os');
 const { sep, normalize } = require("node:path");
 
+// - credits to @https://stackoverflow.com/questions/39217271/how-to-determine-whether-the-directory-is-empty-directory-with-nodejs|by:Russell_Chisholm
 function isEmpty(path) {
     return readdirSync(path).length === 0; /* most of the times should return false i.e. notEmpty */
 }
@@ -19,13 +19,14 @@ const getDirRecursive = (initPath) => {
             else if ( item.isDirectory() ){
                 /* console.log("isDirectory=?", `${item.path}${sep}${item.name}`); */
                 files = [...files, ...getDirRecursive(`${item.path}${sep}${item.name}`)];
-                // if (!isEmpty(normalize(item.path))) {
-                //     files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)/* , noFiles: item.path.split(sep) */} ]
-                // }
+                if (!isEmpty( normalize(item.path) )) {
+                    /* console.log("isEmptyDirectory=?", `${item.path}${sep}${item.name}`); */
+                    files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
+                }
             }
             else if (item.isFile()) {
                 /* console.log("isFile=?", `${item.path}${sep}${item.name}`); */
-                files = [...files, {file: item.name, path: sep + normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)/* , noFiles: [] */}];
+                files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)}];
             }
             else;
         }
@@ -36,18 +37,18 @@ const getDirRecursive = (initPath) => {
 }
 
     getDirRecursive(initPath).forEach((currentDirentEntry, currentDirentIndex)=>{
-        /* console.log(currentDirentEntry); */
+        console.log(currentDirentEntry);
         const levels = currentDirentEntry.levels;
         const depth = levels.length;
-        const filename = currentDirentEntry.file;
-        const __dirname = currentDirentEntry.path;
+        const relativePath = "."; // @https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
+        const normalizedPath = currentDirentEntry.path;
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
             process.stdout.write(EOL);
         }
-        levels.forEach((value, index)=>{
+        levels.forEach((value, index, arr)=>{
             if (depth-1 === index){
-                process.stdout.write(`${/* currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) */ normalize(__dirname)}`);
+                process.stdout.write(`${relativePath}${sep}${normalizedPath}`);
                 process.stdout.write(EOL);
             }
         })

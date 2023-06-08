@@ -1,0 +1,597 @@
+{
+  file: 'COMMIT_EDITMSG',
+  path: '.git\\COMMIT_EDITMSG',
+  levels: [ './', '.git' ]
+}
+.
+.\.git\COMMIT_EDITMSG
+{ file: 'config', path: '.git\\config', levels: [ './', '.git' ] }
+.\.git\config
+{
+  file: 'description',
+  path: '.git\\description',
+  levels: [ './', '.git' ]
+}
+.\.git\description
+{
+  file: 'FETCH_HEAD',
+  path: '.git\\FETCH_HEAD',
+  levels: [ './', '.git' ]
+}
+.\.git\FETCH_HEAD
+{ file: 'HEAD', path: '.git\\HEAD', levels: [ './', '.git' ] }
+.\.git\HEAD
+{
+  file: 'applypatch-msg.sample',
+  path: '.git\\hooks\\applypatch-msg.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\applypatch-msg.sample
+{
+  file: 'commit-msg.sample',
+  path: '.git\\hooks\\commit-msg.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\commit-msg.sample
+{
+  file: 'fsmonitor-watchman.sample',
+  path: '.git\\hooks\\fsmonitor-watchman.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\fsmonitor-watchman.sample
+{
+  file: 'post-update.sample',
+  path: '.git\\hooks\\post-update.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\post-update.sample
+{
+  file: 'pre-applypatch.sample',
+  path: '.git\\hooks\\pre-applypatch.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\pre-applypatch.sample
+{
+  file: 'pre-commit.sample',
+  path: '.git\\hooks\\pre-commit.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\pre-commit.sample
+{
+  file: 'pre-merge-commit.sample',
+  path: '.git\\hooks\\pre-merge-commit.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\pre-merge-commit.sample
+{
+  file: 'pre-push.sample',
+  path: '.git\\hooks\\pre-push.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\pre-push.sample
+{
+  file: 'pre-rebase.sample',
+  path: '.git\\hooks\\pre-rebase.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\pre-rebase.sample
+{
+  file: 'pre-receive.sample',
+  path: '.git\\hooks\\pre-receive.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\pre-receive.sample
+{
+  file: 'prepare-commit-msg.sample',
+  path: '.git\\hooks\\prepare-commit-msg.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\prepare-commit-msg.sample
+{
+  file: 'push-to-checkout.sample',
+  path: '.git\\hooks\\push-to-checkout.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\push-to-checkout.sample
+{
+  file: 'update.sample',
+  path: '.git\\hooks\\update.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+.\.git\hooks\update.sample
+{ file: 'hooks', path: '.git\\hooks\\', levels: [ './', '.git' ] }
+.\.git\hooks\
+{ file: 'index', path: '.git\\index', levels: [ './', '.git' ] }
+.\.git\index
+{
+  file: 'exclude',
+  path: '.git\\info\\exclude',
+  levels: [ './', '.git', 'info' ]
+}
+.\.git\info\exclude
+{ file: 'info', path: '.git\\info\\', levels: [ './', '.git' ] }
+.\.git\info\
+{
+  file: 'HEAD',
+  path: '.git\\logs\\HEAD',
+  levels: [ './', '.git', 'logs' ]
+}
+.\.git\logs\HEAD
+{
+  file: 'main',
+  path: '.git\\logs\\refs\\heads\\main',
+  levels: [ './', '.git', 'logs', 'refs', 'heads' ]
+}
+.\.git\logs\refs\heads\main
+{
+  file: 'heads',
+  path: '.git\\logs\\refs\\heads\\',
+  levels: [ './', '.git', 'logs', 'refs' ]
+}
+.\.git\logs\refs\heads\
+{
+  file: 'HEAD',
+  path: '.git\\logs\\refs\\remotes\\origin\\HEAD',
+  levels: [ './', '.git', 'logs', 'refs', 'remotes', 'origin' ]
+}
+.\.git\logs\refs\remotes\origin\HEAD
+{
+  file: 'main',
+  path: '.git\\logs\\refs\\remotes\\origin\\main',
+  levels: [ './', '.git', 'logs', 'refs', 'remotes', 'origin' ]
+}
+.\.git\logs\refs\remotes\origin\main
+{
+  file: 'origin',
+  path: '.git\\logs\\refs\\remotes\\origin\\',
+  levels: [ './', '.git', 'logs', 'refs', 'remotes' ]
+}
+.\.git\logs\refs\remotes\origin\
+{
+  file: 'remotes',
+  path: '.git\\logs\\refs\\remotes\\',
+  levels: [ './', '.git', 'logs', 'refs' ]
+}
+.\.git\logs\refs\remotes\
+{
+  file: 'refs',
+  path: '.git\\logs\\refs\\',
+  levels: [ './', '.git', 'logs' ]
+}
+.\.git\logs\refs\
+{ file: 'logs', path: '.git\\logs\\', levels: [ './', '.git' ] }
+.\.git\logs\
+{
+  file: '31f1b2c15f2c750fa7f7058f7417eb3fa0e253',
+  path: '.git\\objects\\07\\31f1b2c15f2c750fa7f7058f7417eb3fa0e253',
+  levels: [ './', '.git', 'objects', '07' ]
+}
+.\.git\objects\07\31f1b2c15f2c750fa7f7058f7417eb3fa0e253
+{
+  file: '71302006337ca4601e34744fcb5e63981b76f1',
+  path: '.git\\objects\\07\\71302006337ca4601e34744fcb5e63981b76f1',
+  levels: [ './', '.git', 'objects', '07' ]
+}
+.\.git\objects\07\71302006337ca4601e34744fcb5e63981b76f1
+{
+  file: '07',
+  path: '.git\\objects\\07\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\07\
+{
+  file: 'd0376b2469a9476e34e453bcd8ac6fcec0c824',
+  path: '.git\\objects\\0f\\d0376b2469a9476e34e453bcd8ac6fcec0c824',
+  levels: [ './', '.git', 'objects', '0f' ]
+}
+.\.git\objects\0f\d0376b2469a9476e34e453bcd8ac6fcec0c824
+{
+  file: '0f',
+  path: '.git\\objects\\0f\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\0f\
+{
+  file: '8cdda97463ead66ae4695ef86aa4bd47f8e702',
+  path: '.git\\objects\\1e\\8cdda97463ead66ae4695ef86aa4bd47f8e702',
+  levels: [ './', '.git', 'objects', '1e' ]
+}
+.\.git\objects\1e\8cdda97463ead66ae4695ef86aa4bd47f8e702
+{
+  file: '1e',
+  path: '.git\\objects\\1e\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\1e\
+{
+  file: '75a596252f6565243daf05aafac82e523f4542',
+  path: '.git\\objects\\28\\75a596252f6565243daf05aafac82e523f4542',
+  levels: [ './', '.git', 'objects', '28' ]
+}
+.\.git\objects\28\75a596252f6565243daf05aafac82e523f4542
+{
+  file: '28',
+  path: '.git\\objects\\28\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\28\
+{
+  file: '1c3814e331be575fcb514e97da2564b6b48849',
+  path: '.git\\objects\\29\\1c3814e331be575fcb514e97da2564b6b48849',
+  levels: [ './', '.git', 'objects', '29' ]
+}
+.\.git\objects\29\1c3814e331be575fcb514e97da2564b6b48849
+{
+  file: '29',
+  path: '.git\\objects\\29\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\29\
+{
+  file: '9d3733b57767c4fb879efd879a269878446654',
+  path: '.git\\objects\\2a\\9d3733b57767c4fb879efd879a269878446654',
+  levels: [ './', '.git', 'objects', '2a' ]
+}
+.\.git\objects\2a\9d3733b57767c4fb879efd879a269878446654
+{
+  file: '2a',
+  path: '.git\\objects\\2a\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\2a\
+{
+  file: 'ebbf654086c16ce410e0ecb16d55fb59574570',
+  path: '.git\\objects\\2f\\ebbf654086c16ce410e0ecb16d55fb59574570',
+  levels: [ './', '.git', 'objects', '2f' ]
+}
+.\.git\objects\2f\ebbf654086c16ce410e0ecb16d55fb59574570
+{
+  file: '2f',
+  path: '.git\\objects\\2f\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\2f\
+{
+  file: 'bc1627986aa5d1e6aebc1718de71eaee6021c5',
+  path: '.git\\objects\\30\\bc1627986aa5d1e6aebc1718de71eaee6021c5',
+  levels: [ './', '.git', 'objects', '30' ]
+}
+.\.git\objects\30\bc1627986aa5d1e6aebc1718de71eaee6021c5
+{
+  file: '30',
+  path: '.git\\objects\\30\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\30\
+{
+  file: '1fa09b76987223dc7a106225665a2868305c37',
+  path: '.git\\objects\\3d\\1fa09b76987223dc7a106225665a2868305c37',
+  levels: [ './', '.git', 'objects', '3d' ]
+}
+.\.git\objects\3d\1fa09b76987223dc7a106225665a2868305c37
+{
+  file: '3d',
+  path: '.git\\objects\\3d\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\3d\
+{
+  file: '439edd4a9b0ce1991cda466c274a02b42bd929',
+  path: '.git\\objects\\43\\439edd4a9b0ce1991cda466c274a02b42bd929',
+  levels: [ './', '.git', 'objects', '43' ]
+}
+.\.git\objects\43\439edd4a9b0ce1991cda466c274a02b42bd929
+{
+  file: '43',
+  path: '.git\\objects\\43\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\43\
+{
+  file: '33298c6ae7e9587b5480f3127de21071c1bff1',
+  path: '.git\\objects\\5f\\33298c6ae7e9587b5480f3127de21071c1bff1',
+  levels: [ './', '.git', 'objects', '5f' ]
+}
+.\.git\objects\5f\33298c6ae7e9587b5480f3127de21071c1bff1
+{
+  file: '5f',
+  path: '.git\\objects\\5f\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\5f\
+{
+  file: '71e727342612c6ae0abe29574d6f10e9a33c41',
+  path: '.git\\objects\\62\\71e727342612c6ae0abe29574d6f10e9a33c41',
+  levels: [ './', '.git', 'objects', '62' ]
+}
+.\.git\objects\62\71e727342612c6ae0abe29574d6f10e9a33c41
+{
+  file: '62',
+  path: '.git\\objects\\62\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\62\
+{
+  file: 'bde966981a71057ea1334039a7216addd926ca',
+  path: '.git\\objects\\69\\bde966981a71057ea1334039a7216addd926ca',
+  levels: [ './', '.git', 'objects', '69' ]
+}
+.\.git\objects\69\bde966981a71057ea1334039a7216addd926ca
+{
+  file: '69',
+  path: '.git\\objects\\69\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\69\
+{
+  file: 'ca8ec56e5f1d0c4e1f6ad29ebdc8d23408b5bd',
+  path: '.git\\objects\\71\\ca8ec56e5f1d0c4e1f6ad29ebdc8d23408b5bd',
+  levels: [ './', '.git', 'objects', '71' ]
+}
+.\.git\objects\71\ca8ec56e5f1d0c4e1f6ad29ebdc8d23408b5bd
+{
+  file: '71',
+  path: '.git\\objects\\71\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\71\
+{
+  file: '2dab57ced1a80c6be2f2683ba130f13d915192',
+  path: '.git\\objects\\73\\2dab57ced1a80c6be2f2683ba130f13d915192',
+  levels: [ './', '.git', 'objects', '73' ]
+}
+.\.git\objects\73\2dab57ced1a80c6be2f2683ba130f13d915192
+{
+  file: '73',
+  path: '.git\\objects\\73\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\73\
+{
+  file: '73137d7ecd7f7e4aa5141fff7925dc49365ed3',
+  path: '.git\\objects\\7d\\73137d7ecd7f7e4aa5141fff7925dc49365ed3',
+  levels: [ './', '.git', 'objects', '7d' ]
+}
+.\.git\objects\7d\73137d7ecd7f7e4aa5141fff7925dc49365ed3
+{
+  file: '7d',
+  path: '.git\\objects\\7d\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\7d\
+{
+  file: 'cbbb222453c5512b68f2f9a8e6880860d3cead',
+  path: '.git\\objects\\89\\cbbb222453c5512b68f2f9a8e6880860d3cead',
+  levels: [ './', '.git', 'objects', '89' ]
+}
+.\.git\objects\89\cbbb222453c5512b68f2f9a8e6880860d3cead
+{
+  file: '89',
+  path: '.git\\objects\\89\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\89\
+{
+  file: '137891791fe96927ad78e64b0aad7bded08bdc',
+  path: '.git\\objects\\8b\\137891791fe96927ad78e64b0aad7bded08bdc',
+  levels: [ './', '.git', 'objects', '8b' ]
+}
+.\.git\objects\8b\137891791fe96927ad78e64b0aad7bded08bdc
+{
+  file: '8b',
+  path: '.git\\objects\\8b\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\8b\
+{
+  file: 'b84b3dd1f689dbd91026ff79f5b3b817a9e090',
+  path: '.git\\objects\\95\\b84b3dd1f689dbd91026ff79f5b3b817a9e090',
+  levels: [ './', '.git', 'objects', '95' ]
+}
+.\.git\objects\95\b84b3dd1f689dbd91026ff79f5b3b817a9e090
+{
+  file: '95',
+  path: '.git\\objects\\95\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\95\
+{
+  file: '375ef6d9e2f65bbccaa1ea1b7ca26c3ff1aeac',
+  path: '.git\\objects\\c8\\375ef6d9e2f65bbccaa1ea1b7ca26c3ff1aeac',
+  levels: [ './', '.git', 'objects', 'c8' ]
+}
+.\.git\objects\c8\375ef6d9e2f65bbccaa1ea1b7ca26c3ff1aeac
+{
+  file: 'c8',
+  path: '.git\\objects\\c8\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\c8\
+{
+  file: 'e83d2bb04ff4df22840e411bb6379d40d485f8',
+  path: '.git\\objects\\cc\\e83d2bb04ff4df22840e411bb6379d40d485f8',
+  levels: [ './', '.git', 'objects', 'cc' ]
+}
+.\.git\objects\cc\e83d2bb04ff4df22840e411bb6379d40d485f8
+{
+  file: 'cc',
+  path: '.git\\objects\\cc\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\cc\
+{
+  file: '47a84253fb325cb08d7c515e33e6e1055c8324',
+  path: '.git\\objects\\d5\\47a84253fb325cb08d7c515e33e6e1055c8324',
+  levels: [ './', '.git', 'objects', 'd5' ]
+}
+.\.git\objects\d5\47a84253fb325cb08d7c515e33e6e1055c8324
+{
+  file: 'd5',
+  path: '.git\\objects\\d5\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\d5\
+{
+  file: '3847d6747607532a3145c108df989b752ecc95',
+  path: '.git\\objects\\e4\\3847d6747607532a3145c108df989b752ecc95',
+  levels: [ './', '.git', 'objects', 'e4' ]
+}
+.\.git\objects\e4\3847d6747607532a3145c108df989b752ecc95
+{
+  file: 'e4',
+  path: '.git\\objects\\e4\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\e4\
+{
+  file: '9de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+  path: '.git\\objects\\e6\\9de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+  levels: [ './', '.git', 'objects', 'e6' ]
+}
+.\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391
+{
+  file: 'e6',
+  path: '.git\\objects\\e6\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\e6\
+{
+  file: '090c23f7ec717c2da5e29b159304f572f165dd',
+  path: '.git\\objects\\e9\\090c23f7ec717c2da5e29b159304f572f165dd',
+  levels: [ './', '.git', 'objects', 'e9' ]
+}
+.\.git\objects\e9\090c23f7ec717c2da5e29b159304f572f165dd
+{
+  file: 'e9',
+  path: '.git\\objects\\e9\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\e9\
+{
+  file: 'ac539da58ffbe71f058064f9728eaed5d3cd88',
+  path: '.git\\objects\\ef\\ac539da58ffbe71f058064f9728eaed5d3cd88',
+  levels: [ './', '.git', 'objects', 'ef' ]
+}
+.\.git\objects\ef\ac539da58ffbe71f058064f9728eaed5d3cd88
+{
+  file: 'ef',
+  path: '.git\\objects\\ef\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\ef\
+{
+  file: 'info',
+  path: '.git\\objects\\info\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\info\
+{
+  file: 'pack',
+  path: '.git\\objects\\pack\\',
+  levels: [ './', '.git', 'objects' ]
+}
+.\.git\objects\pack\
+{ file: 'objects', path: '.git\\objects\\', levels: [ './', '.git' ] }
+.\.git\objects\
+{
+  file: 'main',
+  path: '.git\\refs\\heads\\main',
+  levels: [ './', '.git', 'refs', 'heads' ]
+}
+.\.git\refs\heads\main
+{
+  file: 'heads',
+  path: '.git\\refs\\heads\\',
+  levels: [ './', '.git', 'refs' ]
+}
+.\.git\refs\heads\
+{
+  file: 'HEAD',
+  path: '.git\\refs\\remotes\\origin\\HEAD',
+  levels: [ './', '.git', 'refs', 'remotes', 'origin' ]
+}
+.\.git\refs\remotes\origin\HEAD
+{
+  file: 'main',
+  path: '.git\\refs\\remotes\\origin\\main',
+  levels: [ './', '.git', 'refs', 'remotes', 'origin' ]
+}
+.\.git\refs\remotes\origin\main
+{
+  file: 'origin',
+  path: '.git\\refs\\remotes\\origin\\',
+  levels: [ './', '.git', 'refs', 'remotes' ]
+}
+.\.git\refs\remotes\origin\
+{
+  file: 'remotes',
+  path: '.git\\refs\\remotes\\',
+  levels: [ './', '.git', 'refs' ]
+}
+.\.git\refs\remotes\
+{
+  file: 'tags',
+  path: '.git\\refs\\tags\\',
+  levels: [ './', '.git', 'refs' ]
+}
+.\.git\refs\tags\
+{ file: 'refs', path: '.git\\refs\\', levels: [ './', '.git' ] }
+.\.git\refs\
+{ file: '.git', path: '.git\\', levels: [ './' ] }
+.\.git\
+{
+  file: '.gitignore',
+  path: 'containing\\.gitignore',
+  levels: [ './', 'containing' ]
+}
+.\containing\.gitignore
+{
+  file: 'dump.txt',
+  path: 'containing\\dump.txt',
+  levels: [ './', 'containing' ]
+}
+.\containing\dump.txt
+{
+  file: 'dump1.txt',
+  path: 'containing\\dump1.txt',
+  levels: [ './', 'containing' ]
+}
+.\containing\dump1.txt
+{
+  file: 'innerMostHidden',
+  path: 'containing\\intermEmpty\\innerMostHidden\\',
+  levels: [ './', 'containing', 'intermEmpty' ]
+}
+.\containing\intermEmpty\innerMostHidden\
+{
+  file: 'middle.txt',
+  path: 'containing\\intermEmpty\\middle.txt',
+  levels: [ './', 'containing', 'intermEmpty' ]
+}
+.\containing\intermEmpty\middle.txt
+{
+  file: 'intermEmpty',
+  path: 'containing\\intermEmpty\\',
+  levels: [ './', 'containing' ]
+}
+.\containing\intermEmpty\
+{
+  file: 'README.md',
+  path: 'containing\\README.md',
+  levels: [ './', 'containing' ]
+}
+.\containing\README.md
+{
+  file: 'some.txt',
+  path: 'containing\\some.txt',
+  levels: [ './', 'containing' ]
+}
+.\containing\some.txt
+{ file: 'containing', path: 'containing\\', levels: [ './' ] }
+.\containing\
+{ file: 'dump.txt', path: 'dump.txt', levels: [ './' ] }
+.\dump.txt
+{ file: 'index.js', path: 'index.js', levels: [ './' ] }
+.\index.js
+{ file: 'package.json', path: 'package.json', levels: [ './' ] }
+.\package.json
