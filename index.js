@@ -1,3 +1,4 @@
+const { log } = require('node:console');
 const { readdirSync } = require('node:fs');
 const { EOL } = require('node:os');
 const { sep, normalize } = require("node:path");
@@ -65,16 +66,22 @@ const getDirRecursive = (initPath) => {
 
     getDirRecursive(initPath).forEach((currentDirentEntry, currentDirentIndex)=>{
         /* console.log(currentDirentEntry); */
-        const levels = currentDirentEntry.levels;
+        /* const levels = currentDirentEntry.levels; */
+        const levels = currentDirentEntry.path.split(sep);
         const depth = levels.length;
         const relativePath = "."; // @https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
         const normalizedPath = currentDirentEntry.path;
+        const filename = currentDirentEntry.file;
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
             process.stdout.write(EOL);
         }
-        levels.forEach((value, index, arr)=>{
+        levels.forEach((value, index)=>{
+            console.log(whitespace(1+index, "|"));
             if (depth-1 === index){
+                // if (value === ""){
+                //     process.stdout.write(whitespace(index))
+                // }
                 process.stdout.write(`${relativePath}${sep}${normalizedPath}`);
                 process.stdout.write(EOL);
             }
