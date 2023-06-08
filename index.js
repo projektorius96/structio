@@ -52,24 +52,6 @@ const getDirRecursive = (initPath) => {
                 process.stdout.write(EOL);
             }
         })
-        /* === IGNORE BELOW FOR NOW === */
-        // // switch drawback is that depth must be know ahead of time (script must be modified to meet the needs)
-        // switch(depth){
-        //     // later we would use depth as multiplier for multiple tabs to avoid semi-automatic switch statement, now leaving as is for debugging purposes:
-        //     case 1:
-        //         process.stdout.write(filename)
-        //         process.stdout.write(EOL)
-        //     break;
-        //     case 2:
-        //         process.stdout.write(`${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
-        //         process.stdout.write(EOL)
-        //     break;
-        //     case 3:
-        //         process.stdout.write(`\t${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
-        //         process.stdout.write(EOL)
-        //     break;
-        //     DEFAULT:;
-        // }
     })
 
 
