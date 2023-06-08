@@ -50,10 +50,10 @@ const getDirRecursive = (initPath) => {
             else if ( item.isDirectory() ){
                 /* console.log("isDirectory=?", `${item.path}${sep}${item.name}`); */
                 files = [...files, ...getDirRecursive(`${item.path}${sep}${item.name}`)];
-                // if (!isEmpty( normalize(item.path) )) {
-                //     /* console.log("isEmptyDirectory=?", `${item.path}${sep}${item.name}`); */
-                //     files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
-                // }
+                if (!isEmpty( normalize(item.path) )) {
+                    /* console.log("isEmptyDirectory=?", `${item.path}${sep}${item.name}`); */
+                    files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
+                }
             }
             else if (item.isFile()) {
                 /* console.log("isFile=?", `${item.path}${sep}${item.name}`); */
@@ -77,17 +77,19 @@ const getDirRecursive = (initPath) => {
         const filename = currentDirentEntry.file;
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
-            /* process.stdout.write(EOL); */
+            process.stdout.write(EOL);
         }
         levels.forEach((value, index)=>{
             const normalizedDirname = `${normalize(levels.slice(0, -1).join(sep))}${sep}`;
-           //  process.stdout.write(EOL);
+            process.stdout.write(`${whitespace(index, "|")}`)
             if (depth-1 === index){
-                process.stdout.write(EOL);
                 process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
-                /* process.stdout.write(EOL); */
-                process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${value}`);
-                /* process.stdout.write(EOL); */
+                process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${filename}`);
+                process.stdout.write(EOL);
+                // process.stdout.write(EOL);
+                // process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
+                // /* process.stdout.write(EOL); */
+                // process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${value}`);
             }
         })
     })
