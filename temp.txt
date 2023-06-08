@@ -1,0 +1,7 @@
+.
+.\containing\___________.gitignore
+.\containing\intermEmpty\_______________________another.txt
+.\containing\intermEmpty\innerMostHidden\_______________________________________
+.\containing\intermEmpty\_______________________middle.txt
+.\containing\intermEmpty\_______________________
+.\containing\___________README.md

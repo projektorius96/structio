@@ -50,10 +50,10 @@ const getDirRecursive = (initPath) => {
             else if ( item.isDirectory() ){
                 /* console.log("isDirectory=?", `${item.path}${sep}${item.name}`); */
                 files = [...files, ...getDirRecursive(`${item.path}${sep}${item.name}`)];
-                if (!isEmpty( normalize(item.path) )) {
-                    /* console.log("isEmptyDirectory=?", `${item.path}${sep}${item.name}`); */
-                    files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
-                }
+                // if (!isEmpty( normalize(item.path) )) {
+                //     /* console.log("isEmptyDirectory=?", `${item.path}${sep}${item.name}`); */
+                //     files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
+                // }
             }
             else if (item.isFile()) {
                 /* console.log("isFile=?", `${item.path}${sep}${item.name}`); */
@@ -81,13 +81,12 @@ const getDirRecursive = (initPath) => {
         }
         levels.forEach((value, index)=>{
             const normalizedDirname = `${normalize(levels.slice(0, -1).join(sep))}${sep}`;
-            // process.stdout.write(whitespace(index, "|"));
            //  process.stdout.write(EOL);
             if (depth-1 === index){
                 process.stdout.write(EOL);
-                process.stdout.write(`${relativePath}${sep}${/* normalizedPath */normalizedDirname}`);
-                process.stdout.write(EOL);
-                process.stdout.write(`${whitespace( /* cursorPosDeterm(levels.slice(0, -1)) */normalizedDirname.length, "_" )}${value}`);
+                process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
+                /* process.stdout.write(EOL); */
+                process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${value}`);
                 /* process.stdout.write(EOL); */
             }
         })
