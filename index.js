@@ -25,7 +25,7 @@ const getDirRecursive = (initPath) => {
             }
             else if (item.isFile()) {
                 /* console.log("isFile=?", `${item.path}${sep}${item.name}`); */
-                files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)/* , noFiles: [] */}];
+                files = [...files, {file: item.name, path: sep + normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)/* , noFiles: [] */}];
             }
             else;
         }
@@ -36,30 +36,39 @@ const getDirRecursive = (initPath) => {
 }
 
     getDirRecursive(initPath).forEach((currentDirentEntry, currentDirentIndex)=>{
-        console.log(currentDirentEntry);
-        const depth = currentDirentEntry.levels.length;
+        /* console.log(currentDirentEntry); */
+        const levels = currentDirentEntry.levels;
+        const depth = levels.length;
         const filename = currentDirentEntry.file;
+        const __dirname = currentDirentEntry.path;
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
             process.stdout.write(EOL);
         }
-        // switch drawback is that depth must be know ahead of time (script must be modified to meet the needs)
-        switch(depth){
-            // later we would use depth as multiplier for multiple tabs to avoid semi-automatic switch statement, now leaving as is for debugging purposes:
-            case 1:
-                process.stdout.write(filename)
-                process.stdout.write(EOL)
-            break;
-            case 2:
-                process.stdout.write(`${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
-                process.stdout.write(EOL)
-            break;
-            case 3:
-                process.stdout.write(`\t${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
-                process.stdout.write(EOL)
-            break;
-            DEFAULT:;
-        }
+        levels.forEach((value, index)=>{
+            if (depth-1 === index){
+                process.stdout.write(`${/* currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) */ normalize(__dirname)}`);
+                process.stdout.write(EOL);
+            }
+        })
+        /* === IGNORE BELOW FOR NOW === */
+        // // switch drawback is that depth must be know ahead of time (script must be modified to meet the needs)
+        // switch(depth){
+        //     // later we would use depth as multiplier for multiple tabs to avoid semi-automatic switch statement, now leaving as is for debugging purposes:
+        //     case 1:
+        //         process.stdout.write(filename)
+        //         process.stdout.write(EOL)
+        //     break;
+        //     case 2:
+        //         process.stdout.write(`${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
+        //         process.stdout.write(EOL)
+        //     break;
+        //     case 3:
+        //         process.stdout.write(`\t${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
+        //         process.stdout.write(EOL)
+        //     break;
+        //     DEFAULT:;
+        // }
     })
 
 
