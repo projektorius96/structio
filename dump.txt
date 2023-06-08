@@ -1,26 +1,331 @@
-.
-\.gitconfig
-\.git\description
-\.git\HEAD
-\.git\hooks\applypatch-msg.sample
-\.git\hooks\commit-msg.sample
-\.git\hooks\fsmonitor-watchman.sample
-\.git\hooks\post-update.sample
-\.git\hooks\pre-applypatch.sample
-\.git\hooks\pre-commit.sample
-\.git\hooks\pre-merge-commit.sample
-\.git\hooks\pre-push.sample
-\.git\hooks\pre-rebase.sample
-\.git\hooks\pre-receive.sample
-\.git\hooks\prepare-commit-msg.sample
-\.git\hooks\push-to-checkout.sample
-\.git\hooks\update.sample
-\.git\info\exclude
-\.gitignore
-\dump.txt
-\index.js
-\package.json
-\README.md
-\subdir\tunnel\hidden.txt
-\submarine\sub2.js
-\zoo\eating.h
+{
+  file: 'COMMIT_EDITMSG',
+  path: '.git\\COMMIT_EDITMSG',
+  levels: [ './', '.git' ]
+}
+{ file: 'config', path: '.git\\config', levels: [ './', '.git' ] }
+{
+  file: 'description',
+  path: '.git\\description',
+  levels: [ './', '.git' ]
+}
+{
+  file: 'FETCH_HEAD',
+  path: '.git\\FETCH_HEAD',
+  levels: [ './', '.git' ]
+}
+{ file: 'HEAD', path: '.git\\HEAD', levels: [ './', '.git' ] }
+{
+  file: 'applypatch-msg.sample',
+  path: '.git\\hooks\\applypatch-msg.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'commit-msg.sample',
+  path: '.git\\hooks\\commit-msg.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'fsmonitor-watchman.sample',
+  path: '.git\\hooks\\fsmonitor-watchman.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'post-update.sample',
+  path: '.git\\hooks\\post-update.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'pre-applypatch.sample',
+  path: '.git\\hooks\\pre-applypatch.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'pre-commit.sample',
+  path: '.git\\hooks\\pre-commit.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'pre-merge-commit.sample',
+  path: '.git\\hooks\\pre-merge-commit.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'pre-push.sample',
+  path: '.git\\hooks\\pre-push.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'pre-rebase.sample',
+  path: '.git\\hooks\\pre-rebase.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'pre-receive.sample',
+  path: '.git\\hooks\\pre-receive.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'prepare-commit-msg.sample',
+  path: '.git\\hooks\\prepare-commit-msg.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'push-to-checkout.sample',
+  path: '.git\\hooks\\push-to-checkout.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{
+  file: 'update.sample',
+  path: '.git\\hooks\\update.sample',
+  levels: [ './', '.git', 'hooks' ]
+}
+{ file: 'hooks', path: '.git\\hooks', levels: [ './', '.git' ] }
+{ file: 'index', path: '.git\\index', levels: [ './', '.git' ] }
+{
+  file: 'exclude',
+  path: '.git\\info\\exclude',
+  levels: [ './', '.git', 'info' ]
+}
+{ file: 'info', path: '.git\\info', levels: [ './', '.git' ] }
+{
+  file: 'HEAD',
+  path: '.git\\logs\\HEAD',
+  levels: [ './', '.git', 'logs' ]
+}
+{
+  file: 'main',
+  path: '.git\\logs\\refs\\heads\\main',
+  levels: [ './', '.git', 'logs', 'refs', 'heads' ]
+}
+{
+  file: 'heads',
+  path: '.git\\logs\\refs\\heads',
+  levels: [ './', '.git', 'logs', 'refs' ]
+}
+{
+  file: 'HEAD',
+  path: '.git\\logs\\refs\\remotes\\origin\\HEAD',
+  levels: [ './', '.git', 'logs', 'refs', 'remotes', 'origin' ]
+}
+{
+  file: 'main',
+  path: '.git\\logs\\refs\\remotes\\origin\\main',
+  levels: [ './', '.git', 'logs', 'refs', 'remotes', 'origin' ]
+}
+{
+  file: 'origin',
+  path: '.git\\logs\\refs\\remotes\\origin',
+  levels: [ './', '.git', 'logs', 'refs', 'remotes' ]
+}
+{
+  file: 'remotes',
+  path: '.git\\logs\\refs\\remotes',
+  levels: [ './', '.git', 'logs', 'refs' ]
+}
+{
+  file: 'refs',
+  path: '.git\\logs\\refs',
+  levels: [ './', '.git', 'logs' ]
+}
+{ file: 'logs', path: '.git\\logs', levels: [ './', '.git' ] }
+{
+  file: '31f1b2c15f2c750fa7f7058f7417eb3fa0e253',
+  path: '.git\\objects\\07\\31f1b2c15f2c750fa7f7058f7417eb3fa0e253',
+  levels: [ './', '.git', 'objects', '07' ]
+}
+{
+  file: '07',
+  path: '.git\\objects\\07',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: 'd0376b2469a9476e34e453bcd8ac6fcec0c824',
+  path: '.git\\objects\\0f\\d0376b2469a9476e34e453bcd8ac6fcec0c824',
+  levels: [ './', '.git', 'objects', '0f' ]
+}
+{
+  file: '0f',
+  path: '.git\\objects\\0f',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: '8cdda97463ead66ae4695ef86aa4bd47f8e702',
+  path: '.git\\objects\\1e\\8cdda97463ead66ae4695ef86aa4bd47f8e702',
+  levels: [ './', '.git', 'objects', '1e' ]
+}
+{
+  file: '1e',
+  path: '.git\\objects\\1e',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: '75a596252f6565243daf05aafac82e523f4542',
+  path: '.git\\objects\\28\\75a596252f6565243daf05aafac82e523f4542',
+  levels: [ './', '.git', 'objects', '28' ]
+}
+{
+  file: '28',
+  path: '.git\\objects\\28',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: '9d3733b57767c4fb879efd879a269878446654',
+  path: '.git\\objects\\2a\\9d3733b57767c4fb879efd879a269878446654',
+  levels: [ './', '.git', 'objects', '2a' ]
+}
+{
+  file: '2a',
+  path: '.git\\objects\\2a',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: 'bc1627986aa5d1e6aebc1718de71eaee6021c5',
+  path: '.git\\objects\\30\\bc1627986aa5d1e6aebc1718de71eaee6021c5',
+  levels: [ './', '.git', 'objects', '30' ]
+}
+{
+  file: '30',
+  path: '.git\\objects\\30',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: '73137d7ecd7f7e4aa5141fff7925dc49365ed3',
+  path: '.git\\objects\\7d\\73137d7ecd7f7e4aa5141fff7925dc49365ed3',
+  levels: [ './', '.git', 'objects', '7d' ]
+}
+{
+  file: '7d',
+  path: '.git\\objects\\7d',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: 'cbbb222453c5512b68f2f9a8e6880860d3cead',
+  path: '.git\\objects\\89\\cbbb222453c5512b68f2f9a8e6880860d3cead',
+  levels: [ './', '.git', 'objects', '89' ]
+}
+{
+  file: '89',
+  path: '.git\\objects\\89',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: '137891791fe96927ad78e64b0aad7bded08bdc',
+  path: '.git\\objects\\8b\\137891791fe96927ad78e64b0aad7bded08bdc',
+  levels: [ './', '.git', 'objects', '8b' ]
+}
+{
+  file: '8b',
+  path: '.git\\objects\\8b',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: 'b84b3dd1f689dbd91026ff79f5b3b817a9e090',
+  path: '.git\\objects\\95\\b84b3dd1f689dbd91026ff79f5b3b817a9e090',
+  levels: [ './', '.git', 'objects', '95' ]
+}
+{
+  file: '95',
+  path: '.git\\objects\\95',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: '47a84253fb325cb08d7c515e33e6e1055c8324',
+  path: '.git\\objects\\d5\\47a84253fb325cb08d7c515e33e6e1055c8324',
+  levels: [ './', '.git', 'objects', 'd5' ]
+}
+{
+  file: 'd5',
+  path: '.git\\objects\\d5',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: '9de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+  path: '.git\\objects\\e6\\9de29bb2d1d6434b8b29ae775ad8c2e48c5391',
+  levels: [ './', '.git', 'objects', 'e6' ]
+}
+{
+  file: 'e6',
+  path: '.git\\objects\\e6',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: 'ac539da58ffbe71f058064f9728eaed5d3cd88',
+  path: '.git\\objects\\ef\\ac539da58ffbe71f058064f9728eaed5d3cd88',
+  levels: [ './', '.git', 'objects', 'ef' ]
+}
+{
+  file: 'ef',
+  path: '.git\\objects\\ef',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: 'info',
+  path: '.git\\objects\\info',
+  levels: [ './', '.git', 'objects' ]
+}
+{
+  file: 'pack',
+  path: '.git\\objects\\pack',
+  levels: [ './', '.git', 'objects' ]
+}
+{ file: 'objects', path: '.git\\objects', levels: [ './', '.git' ] }
+{
+  file: 'main',
+  path: '.git\\refs\\heads\\main',
+  levels: [ './', '.git', 'refs', 'heads' ]
+}
+{
+  file: 'heads',
+  path: '.git\\refs\\heads',
+  levels: [ './', '.git', 'refs' ]
+}
+{
+  file: 'HEAD',
+  path: '.git\\refs\\remotes\\origin\\HEAD',
+  levels: [ './', '.git', 'refs', 'remotes', 'origin' ]
+}
+{
+  file: 'main',
+  path: '.git\\refs\\remotes\\origin\\main',
+  levels: [ './', '.git', 'refs', 'remotes', 'origin' ]
+}
+{
+  file: 'origin',
+  path: '.git\\refs\\remotes\\origin',
+  levels: [ './', '.git', 'refs', 'remotes' ]
+}
+{
+  file: 'remotes',
+  path: '.git\\refs\\remotes',
+  levels: [ './', '.git', 'refs' ]
+}
+{
+  file: 'tags',
+  path: '.git\\refs\\tags',
+  levels: [ './', '.git', 'refs' ]
+}
+{ file: 'refs', path: '.git\\refs', levels: [ './', '.git' ] }
+{ file: '.git', path: '.git', levels: [ './' ] }
+{ file: '.gitignore', path: '.gitignore', levels: [ './' ] }
+{
+  file: 'some.txt',
+  path: 'containing\\some.txt',
+  levels: [ './', 'containing' ]
+}
+{ file: 'containing', path: 'containing', levels: [ './' ] }
+{ file: 'dump.txt', path: 'dump.txt', levels: [ './' ] }
+{ file: 'index.js', path: 'index.js', levels: [ './' ] }
+{
+  file: 'containingInnerMost',
+  path: 'outerEmpty\\intermEmpty\\containingInnerMost',
+  levels: [ './', 'outerEmpty', 'intermEmpty' ]
+}
+{
+  file: 'intermEmpty',
+  path: 'outerEmpty\\intermEmpty',
+  levels: [ './', 'outerEmpty' ]
+}
+{ file: 'outerEmpty', path: 'outerEmpty', levels: [ './' ] }
+{ file: 'package.json', path: 'package.json', levels: [ './' ] }
+{ file: 'README.md', path: 'README.md', levels: [ './' ] }
