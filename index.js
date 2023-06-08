@@ -1,4 +1,3 @@
-const { log } = require('node:console');
 const { readdirSync } = require('node:fs');
 const { EOL } = require('node:os');
 const { sep, normalize } = require("node:path");
@@ -7,7 +6,6 @@ const { sep, normalize } = require("node:path");
 function isEmpty(path) {
     return readdirSync(path).length === 0; /* most of the times should return false i.e. notEmpty */
 }
-
 
 /* // USAGE:
 > the following shows how to eliminate whitespace within function call (at runtime)
@@ -34,8 +32,13 @@ function whitespace(n, currentValue = "\xa0", init = ""){
     );
 }
 
+// function cursorPosDeterm(arr){
+//     let len = arr.reduce((acc, current)=>(acc + current));
+//     return len.length;
+// }
 
-const initPath = process.argv[2] || "."; // USAGE # node script_file starting_position_to_scan_at root_namespace__default=cwd e.g. node index.js ./ .
+
+const initPath = process.argv[2] || ".";
 const ROOT = process.argv[3] || process.cwd().split(sep).pop();
 // - credits to @https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search/66238097#66238097|by:Kabeer+Jaffri
 const getDirRecursive = (initPath) => {
@@ -74,16 +77,18 @@ const getDirRecursive = (initPath) => {
         const filename = currentDirentEntry.file;
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
-            process.stdout.write(EOL);
+            /* process.stdout.write(EOL); */
         }
         levels.forEach((value, index)=>{
-            console.log(whitespace(1+index, "|"));
+            const normalizedDirname = `${normalize(levels.slice(0, -1).join(sep))}${sep}`;
+            // process.stdout.write(whitespace(index, "|"));
+           //  process.stdout.write(EOL);
             if (depth-1 === index){
-                // if (value === ""){
-                //     process.stdout.write(whitespace(index))
-                // }
-                process.stdout.write(`${relativePath}${sep}${normalizedPath}`);
                 process.stdout.write(EOL);
+                process.stdout.write(`${relativePath}${sep}${/* normalizedPath */normalizedDirname}`);
+                process.stdout.write(EOL);
+                process.stdout.write(`${whitespace( /* cursorPosDeterm(levels.slice(0, -1)) */normalizedDirname.length, "_" )}${value}`);
+                /* process.stdout.write(EOL); */
             }
         })
     })
