@@ -25,7 +25,6 @@ const getDirRecursive = (initPath) => {
             }
             else if (item.isFile()) {
                 /* console.log("isFile=?", `${item.path}${sep}${item.name}`); */
-                // if (normalize(item.path).split(sep).length > 1) console.log("notEmptyDir=?", item);
                 files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)/* , noFiles: [] */}];
             }
             else;
@@ -37,7 +36,7 @@ const getDirRecursive = (initPath) => {
 }
 
     getDirRecursive(initPath).forEach((currentDirentEntry, currentDirentIndex)=>{
-        /* console.log(currentDirentEntry); */
+        console.log(currentDirentEntry);
         const depth = currentDirentEntry.levels.length;
         const filename = currentDirentEntry.file;
         if (currentDirentIndex === 0 /* to control root level print */){
@@ -52,11 +51,11 @@ const getDirRecursive = (initPath) => {
                 process.stdout.write(EOL)
             break;
             case 2:
-                process.stdout.write(`\t${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
+                process.stdout.write(`${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
                 process.stdout.write(EOL)
             break;
             case 3:
-                process.stdout.write(`\t\t${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
+                process.stdout.write(`\t${currentDirentEntry.levels.slice(1, currentDirentEntry.levels.length).join(sep) + sep + filename}`)
                 process.stdout.write(EOL)
             break;
             DEFAULT:;
