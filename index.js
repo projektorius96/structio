@@ -1,5 +1,5 @@
 const { log } = require('node:console');
-const { readdirSync } = require('node:fs');
+const { readdirSync, read } = require('node:fs');
 const { EOL } = require('node:os');
 const { sep, normalize } = require("node:path");
 const s = new Set();
@@ -85,7 +85,12 @@ const getDirRecursive = (initPath) => {
             s.add(normalizedDirname)
             const a = Array.from(s)
             if (depth-1 === index && getDirRecursive(initPath).length-1 === currentDirentIndex){
-                console.log(a); // DEV_NOTE # scan each unique path level with readdirSync and see if it contains any of files, if so print them, also each level index will denote level
+                /* console.log(a); */ // DEV_NOTE # scan each unique path level with readdirSync and see if it contains any of files, if so print them, also each level index will denote level
+                a.forEach((u)=>{
+                    console.log( 
+                        normalize(u) + EOL, readdirSync(normalize(u))
+                    );
+                })
             }
         })
     })
