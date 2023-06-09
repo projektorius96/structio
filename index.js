@@ -1,6 +1,8 @@
+const { log } = require('node:console');
 const { readdirSync } = require('node:fs');
 const { EOL } = require('node:os');
 const { sep, normalize } = require("node:path");
+const s = new Set();
 
 // - credits to @https://stackoverflow.com/questions/39217271/how-to-determine-whether-the-directory-is-empty-directory-with-nodejs|by:Russell_Chisholm
 function isEmpty(path) {
@@ -73,7 +75,6 @@ const getDirRecursive = (initPath) => {
         const levels = currentDirentEntry.path.split(sep);
         const depth = levels.length;
         const relativePath = "."; // @https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
-        const normalizedPath = currentDirentEntry.path;
         const filename = currentDirentEntry.file;
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
@@ -81,15 +82,10 @@ const getDirRecursive = (initPath) => {
         }
         levels.forEach((value, index)=>{
             const normalizedDirname = `${normalize(levels.slice(0, -1).join(sep))}${sep}`;
-            process.stdout.write(`${whitespace(index, "|")}`)
-            if (depth-1 === index){
-                process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
-                process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${filename}`);
-                process.stdout.write(EOL);
-                // process.stdout.write(EOL);
-                // process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
-                // /* process.stdout.write(EOL); */
-                // process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${value}`);
+            s.add(normalizedDirname)
+            const a = Array.from(s)
+            if (depth-1 === index && getDirRecursive(initPath).length-1 === currentDirentIndex){
+                console.log(a); // DEV_NOTE # scan each unique path level with readdirSync and see if it contains any of files, if so print them, also each level index will denote level
             }
         })
     })
