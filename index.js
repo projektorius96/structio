@@ -82,14 +82,19 @@ const getDirRecursive = (initPath) => {
         }
         levels.forEach((value, index)=>{
             const normalizedDirname = `${normalize(levels.slice(0, -1).join(sep))}${sep}`;
-            s.add(normalizedDirname)
+            s.add(normalizedDirname + sep)
             const a = Array.from(s)
             if (depth-1 === index && getDirRecursive(initPath).length-1 === currentDirentIndex){
                 /* console.log(a); */ // DEV_NOTE # scan each unique path level with readdirSync and see if it contains any of files, if so print them, also each level index will denote level
                 a.forEach((u)=>{
                     console.log( 
-                        normalize(u) + EOL, readdirSync(normalize(u))
+                        normalize(u)
                     );
+                    // - e.g. bubble sort @https://stackoverflow.com/questions/10630766/how-to-sort-an-array-based-on-the-length-of-each-element
+                    (readdirSync(normalize(u))/* .sort() */).forEach((each)=>{
+                        // DEV_NOTE # each could be regexed by convention e.g. if no .format then it's a directory
+                        console.log(`${whitespace(normalize(u).length, "_")}${each}`);
+                    })
                 })
             }
         })
