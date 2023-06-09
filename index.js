@@ -1,8 +1,6 @@
-const { log } = require('node:console');
-const { readdirSync, read } = require('node:fs');
+const { readdirSync } = require('node:fs');
 const { EOL } = require('node:os');
 const { sep, normalize } = require("node:path");
-const s = new Set();
 
 // - credits to @https://stackoverflow.com/questions/39217271/how-to-determine-whether-the-directory-is-empty-directory-with-nodejs|by:Russell_Chisholm
 function isEmpty(path) {
@@ -54,12 +52,12 @@ const getDirRecursive = (initPath) => {
                 files = [...files, ...getDirRecursive(`${item.path}${sep}${item.name}`)];
                 if (!isEmpty( normalize(item.path) )) {
                     /* console.log("isEmptyDirectory=?", `${item.path}${sep}${item.name}`); */
-                    files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
+                    files = [...files, {file: {endpoint: item.name, isEmpty: true}, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
                 }
             }
             else if (item.isFile()) {
                 /* console.log("isFile=?", `${item.path}${sep}${item.name}`); */
-                files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)}];
+                files = [...files, {file: {endpoint: item.name, isEmpty: false}, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)}];
             }
             else;
         }
@@ -68,14 +66,13 @@ const getDirRecursive = (initPath) => {
         return e;
     }
 }
-
+    const s = new Set();
     getDirRecursive(initPath).forEach((currentDirentEntry, currentDirentIndex)=>{
         /* console.log(currentDirentEntry); */
         /* const levels = currentDirentEntry.levels; */
         const levels = currentDirentEntry.path.split(sep);
         const depth = levels.length;
-        const relativePath = "."; // @https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
-        const filename = currentDirentEntry.file;
+        /* const relativePath = ".";  *///@https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
             process.stdout.write(EOL);
@@ -87,13 +84,13 @@ const getDirRecursive = (initPath) => {
             if (depth-1 === index && getDirRecursive(initPath).length-1 === currentDirentIndex){
                 /* console.log(a); */ // DEV_NOTE # scan each unique path level with readdirSync and see if it contains any of files, if so print them, also each level index will denote level
                 a.forEach((u)=>{
-                    console.log( 
-                        normalize(u)
-                    );
-                    // - e.g. bubble sort @https://stackoverflow.com/questions/10630766/how-to-sort-an-array-based-on-the-length-of-each-element
-                    (readdirSync(normalize(u))/* .sort() */).forEach((each)=>{
-                        // DEV_NOTE # each could be regexed by convention e.g. if no .format then it's a directory
-                        console.log(`${whitespace(normalize(u).length, "_")}${each}`);
+                    process.stdout.write(normalize(u))
+                    process.stdout.write(EOL)
+                    readdirSync(normalize(u), {withFileTypes: true}).forEach((each)=>{
+                        /* process.stdout.write(`${whitespace(normalize(u).length)}${each.file.isEmpty ? each.file.endpoint + sep : each.file.endpoint}`) */// line^1
+                        /* process.stdout.write(EOL) */
+                        process.stdout.write(`${whitespace(normalize(u).length)}${each.isDirectory() ? each.name + sep : each.name}`)
+                        process.stdout.write(EOL)
                     })
                 })
             }
