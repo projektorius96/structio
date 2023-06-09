@@ -9,7 +9,6 @@ function isEmpty(path) {
 
 /**
 @description 
-
     ### USAGE the following shows how to eliminate whitespace within function call (at runtime)
 
     * `abc${whitespace(0)}def`  := 'abcdef'
@@ -27,15 +26,6 @@ function whitespace(n, currentValue = "\xa0", init = ""){
         init
     );
 }
-
-/**
- * ...
- */
-// function cursorPosDeterm(arr){
-//     let len = arr.reduce((acc, current)=>(acc + current));
-//     return len.length;
-// }
-
 
 const initPath = process.argv[2] || ".";
 const ROOT = process.argv[3] || process.cwd().split(sep).pop();
@@ -92,7 +82,6 @@ const getDirRecursive = (initPath) => {
                         process.stdout.write(EOL)
                     })
                 })
-
             }
         })
     })
