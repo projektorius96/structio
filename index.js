@@ -7,8 +7,11 @@ function isEmpty(path) {
     return readdirSync(path).length === 0; /* most of the times should return false i.e. notEmpty */
 }
 
-/* // USAGE:
-> the following shows how to eliminate whitespace within function call (at runtime)
+/**
+@description 
+
+    ### USAGE the following shows how to eliminate whitespace within function call (at runtime)
+
     * `abc${whitespace(0)}def`  := 'abcdef'
     * `abc${whitespace(4, "")}def`  := 'abcdef'
     * `abc${whitespace(0, "", " ")}def` := 'abc def'
@@ -17,13 +20,6 @@ function isEmpty(path) {
     * `abc${whitespace(8, "_")}def` := 'abc________def'
 */
 function whitespace(n, currentValue = "\xa0", init = ""){
-    // return [...Array(n).fill(currentValue)].map((value, index)=>{
-    //     let acc = "";
-    //     acc += value;
-    //     if (index === n-1){
-    //         return str;
-    //     }
-    // })
 
     // instead optimise the returning code by leveraging built-in reducer pattern
     return [...Array(n).fill(currentValue)].reduce(
@@ -32,6 +28,9 @@ function whitespace(n, currentValue = "\xa0", init = ""){
     );
 }
 
+/**
+ * ...
+ */
 // function cursorPosDeterm(arr){
 //     let len = arr.reduce((acc, current)=>(acc + current));
 //     return len.length;
