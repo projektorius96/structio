@@ -73,7 +73,6 @@ const getDirRecursive = (initPath) => {
         const levels = currentDirentEntry.path.split(sep);
         const depth = levels.length;
         const relativePath = "."; // @https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
-        const normalizedPath = currentDirentEntry.path;
         const filename = currentDirentEntry.file;
         if (currentDirentIndex === 0 /* to control root level print */){
             process.stdout.write(ROOT);
@@ -81,15 +80,10 @@ const getDirRecursive = (initPath) => {
         }
         levels.forEach((value, index)=>{
             const normalizedDirname = `${normalize(levels.slice(0, -1).join(sep))}${sep}`;
-            process.stdout.write(`${whitespace(index, "|")}`)
             if (depth-1 === index){
                 process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
                 process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${filename}`);
                 process.stdout.write(EOL);
-                // process.stdout.write(EOL);
-                // process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
-                // /* process.stdout.write(EOL); */
-                // process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${value}`);
             }
         })
     })
