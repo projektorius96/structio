@@ -92,6 +92,7 @@ const getDirRecursive = (initPath) => {
                         process.stdout.write(EOL)
                     })
                 })
+
             }
         })
     })
