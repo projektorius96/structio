@@ -73,7 +73,7 @@ const getDirRecursive = (initPath) => {
         const levels = currentDirentEntry.path.split(sep);
         const depth = levels.length;
         /* const relativePath = ".";  *///@https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
-        if (currentDirentIndex === 0 /* to control root level print */){
+        if (currentDirentIndex === 0 /* to control root level  */){
             process.stdout.write(ROOT);
             process.stdout.write(EOL);
         }
