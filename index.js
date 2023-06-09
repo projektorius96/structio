@@ -7,8 +7,11 @@ function isEmpty(path) {
     return readdirSync(path).length === 0; /* most of the times should return false i.e. notEmpty */
 }
 
-/* // USAGE:
-> the following shows how to eliminate whitespace within function call (at runtime)
+/**
+@description 
+
+    ### USAGE the following shows how to eliminate whitespace within function call (at runtime)
+
     * `abc${whitespace(0)}def`  := 'abcdef'
     * `abc${whitespace(4, "")}def`  := 'abcdef'
     * `abc${whitespace(0, "", " ")}def` := 'abc def'
@@ -17,13 +20,6 @@ function isEmpty(path) {
     * `abc${whitespace(8, "_")}def` := 'abc________def'
 */
 function whitespace(n, currentValue = "\xa0", init = ""){
-    // return [...Array(n).fill(currentValue)].map((value, index)=>{
-    //     let acc = "";
-    //     acc += value;
-    //     if (index === n-1){
-    //         return str;
-    //     }
-    // })
 
     // instead optimise the returning code by leveraging built-in reducer pattern
     return [...Array(n).fill(currentValue)].reduce(
@@ -32,6 +28,9 @@ function whitespace(n, currentValue = "\xa0", init = ""){
     );
 }
 
+/**
+ * ...
+ */
 // function cursorPosDeterm(arr){
 //     let len = arr.reduce((acc, current)=>(acc + current));
 //     return len.length;
@@ -52,12 +51,12 @@ const getDirRecursive = (initPath) => {
                 files = [...files, ...getDirRecursive(`${item.path}${sep}${item.name}`)];
                 if (!isEmpty( normalize(item.path) )) {
                     /* console.log("isEmptyDirectory=?", `${item.path}${sep}${item.name}`); */
-                    files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
+                    files = [...files, {file: {endpoint: item.name, isEmpty: true}, path: normalize(`${item.path}${sep}${item.name}${sep}`), levels: item.path.split(sep)} ]
                 }
             }
             else if (item.isFile()) {
                 /* console.log("isFile=?", `${item.path}${sep}${item.name}`); */
-                files = [...files, {file: item.name, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)}];
+                files = [...files, {file: {endpoint: item.name, isEmpty: false}, path: normalize(`${item.path}${sep}${item.name}`), levels: item.path.split(sep)}];
             }
             else;
         }
@@ -66,24 +65,34 @@ const getDirRecursive = (initPath) => {
         return e;
     }
 }
-
+    const s = new Set();
     getDirRecursive(initPath).forEach((currentDirentEntry, currentDirentIndex)=>{
         /* console.log(currentDirentEntry); */
         /* const levels = currentDirentEntry.levels; */
         const levels = currentDirentEntry.path.split(sep);
         const depth = levels.length;
-        const relativePath = "."; // @https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
-        const filename = currentDirentEntry.file;
-        if (currentDirentIndex === 0 /* to control root level print */){
+        /* const relativePath = ".";  *///@https://learn.microsoft.com/en-gb/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions
+        if (currentDirentIndex === 0 /* to control root level  */){
             process.stdout.write(ROOT);
             process.stdout.write(EOL);
         }
         levels.forEach((value, index)=>{
             const normalizedDirname = `${normalize(levels.slice(0, -1).join(sep))}${sep}`;
-            if (depth-1 === index){
-                process.stdout.write(`${relativePath}${sep}${normalizedDirname}`);
-                process.stdout.write(`${whitespace(normalizedDirname.length, "_")}${filename}`);
-                process.stdout.write(EOL);
+            s.add(normalizedDirname + sep)
+            const a = Array.from(s)
+            if (depth-1 === index && getDirRecursive(initPath).length-1 === currentDirentIndex){
+                /* console.log(a); */ // DEV_NOTE # scan each unique path level with readdirSync and see if it contains any of files, if so print them, also each level index will denote level
+                a.forEach((u)=>{
+                    process.stdout.write(normalize(u))
+                    process.stdout.write(EOL)
+                    readdirSync(normalize(u), {withFileTypes: true}).forEach((each)=>{
+                        /* process.stdout.write(`${whitespace(normalize(u).length)}${each.file.isEmpty ? each.file.endpoint + sep : each.file.endpoint}`) */// line^1
+                        /* process.stdout.write(EOL) */
+                        process.stdout.write(`${whitespace(normalize(u).length)}${each.isDirectory() ? each.name + sep : each.name}`)
+                        process.stdout.write(EOL)
+                    })
+                })
+
             }
         })
     })
