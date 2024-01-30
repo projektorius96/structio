@@ -1,16 +1,28 @@
-# **structio** : zero-deps recursive project layout printer [production-not-ready!]
+# **Project name: structio**
 
-> **PREREQUISITES** : <br>
-For specific examples show below , it considers that script is run from package level i.e. the directory containing package.json
+> **SIGNATURE** node\[.exe\] script_file.\[m\]js \<dir-to-scan> \<outdir>, whereas each \<argv> is as follows:
+>
+> \<dir-to-scan> : directory to scan
+>
+> \<root-namespace default=structio> : the directory to output the \<dir-to-scan> under
 
-### Run a process to print to stdout <br>
-**SIGNATURE** # node script_file starting_position_to_scan_at root_namespace__default=cwd, refer the line below for concrete example: 
-`node index.js ./pseudo_root .\\structio`
+**Example**: `node index.mjs folder-to-scan "."`
 
-### Redirect so to save to file
-> NOTE: Windows users MUST suffix .exe for node standalone runtime to avoid stderr as "stdout is not a tty" as follows <br>
-`node.exe index.js ./pseudo_root .\\structio >> file_name_to_save_stdout_to.txt `
+```diff
+.
+sample\
+       .gitignore
+       intermediate\
+       shoes.txt
+sample\intermediate\
+                    body.txt
+                    head\
+sample\intermediate\head\
+                         helmet.txt
+```
 
-<br>
+---
 
-Cheers !
+### **FAQ**
+
+> WINDOWS USERS : MUST suffix node with .exe, thus `node.exe` for Node.js standalone runtime to avoid stderr output as follows : "stdout is not a tty";

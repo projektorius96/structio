@@ -1,6 +1,6 @@
-const { readdirSync } = require('node:fs');
-const { EOL } = require('node:os');
-const { sep, normalize } = require("node:path");
+import { readdirSync } from 'node:fs';
+import { sep, normalize } from 'node:path';
+import { EOL } from 'node:os';
 
 // - credits to @https://stackoverflow.com/questions/39217271/how-to-determine-whether-the-directory-is-empty-directory-with-nodejs|by:Russell_Chisholm
 function isEmpty(path) {
