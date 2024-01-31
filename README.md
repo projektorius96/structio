@@ -1,12 +1,14 @@
 # **Project name: structio**
 
-> **SIGNATURE** node\[.exe\] script_file.\[m\]js \<dir-to-scan> \<outdir>, whereas each \<argv> is as follows:
->
-> \<dir-to-scan> : directory to scan
->
-> \<root-namespace default=structio> : the directory to output the \<dir-to-scan> under
+> **PAY ATTENTION** : tested only on Windows 10/11 (x64) !
 
-**Example**: `node index.mjs folder-to-scan "."`
+> **SIGNATURE** node\[.exe\] script_file.\[m\]js \<dir-to-scan> \<outdir>
+>
+> \<dir-to-scan> - directory to start initial scan \[**required**\]
+>
+> \<root-namespace> - custom root namespace \[\[optional\]\] ; defaults to current working directory (cwd)
+
+**Example**: `node index.mjs sample "."`
 
 ```diff
 .
@@ -25,4 +27,4 @@ sample\intermediate\head\
 
 ### **FAQ**
 
-> WINDOWS USERS : MUST suffix node with .exe, thus `node.exe` for Node.js standalone runtime to avoid stderr output as follows : "stdout is not a tty";
+> WINDOWS USERS : **MUST** suffix node with **.exe**, thus `node.exe` for Node.js standalone runtime to avoid stderr  : "stdout is not a tty" !
