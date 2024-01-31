@@ -8,23 +8,23 @@ function isEmpty(path) {
 }
 
 /**
-@description 
-    ### USAGE the following shows how to eliminate whitespace within function call (at runtime)
-
-    * `abc${whitespace(0)}def`  := 'abcdef'
-    * `abc${whitespace(4, "")}def`  := 'abcdef'
-    * `abc${whitespace(0, "", " ")}def` := 'abc def'
-    * `abc${whitespace(6)}def` := 'abc      def'
-    * `abc${whitespace(2, ...[], " ")}def` || `abc${whitespace(2, undefined, "")}def` := 'abc  def'
-    * `abc${whitespace(8, "_")}def` := 'abc________def'
+* @example
+* - `abc${whitespace(1)}def` := 'abc def'
+* - `abc${whitespace(2, "_")}def` := 'abc__def'
+* - `abc${whitespace(3, "x", "<", ">")}def` := 'abc<x>def'
+* @returns {String} prepended [& appended] with placeholder symbol (char)
 */
-function whitespace(n, currentValue = "\xa0", init = ""){
-
-    // instead optimise the returning code by leveraging built-in reducer pattern
+function whitespace(n, currentValue = "\xa0", prefix = "", suffix = ""){
     return [...Array(n).fill(currentValue)].reduce(
-        (accumulator, currentValue) => accumulator + currentValue,
-        init
-    );
+        function(accumulator, currentValue, currentIndex){
+            const condition = accumulator + currentValue;
+            if (currentIndex === n-1 && suffix.length > 0){
+                return condition + suffix;
+            }
+            return condition;
+        },
+        prefix
+    ); 
 }
 
 const initPath = process.argv[2] || ".";
